@@ -6,7 +6,7 @@
     position: sticky;
     top: 0;
     width: 100%;
-    background-color: #3f51b5;
+    background-color: #3b0444;
     color: #fff;
     display: flex;
     padding: 0 16px;
@@ -14,3 +14,7 @@
     height: 56px;
     font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
   }
+
+  .navbar-custom {
+    background-color: #4b0b3b;
+}
