@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InventoryComponent } from './inventory/inventory.component';
 import { BounceHouseComponent } from './bounce-house/bounce-house.component';
 import { BounceHouseCreateComponent } from './bounce-house-create/bounce-house-create.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { BounceHouseCreateComponent } from './bounce-house-create/bounce-house-c
     BrowserAnimationsModule,
     IgxButtonModule,
     IgxIconModule,
-    IgxButtonGroupModule
+    IgxButtonGroupModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-bounce-house-create',
@@ -29,8 +30,9 @@ export class BounceHouseCreateComponent implements OnInit {
   blowers = 0;
   lastUsed = '';
   inflatableType = '';
+  postData = '';
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
   }
@@ -79,6 +81,41 @@ export class BounceHouseCreateComponent implements OnInit {
     this.inflatableType = (<HTMLInputElement>event.target).value;
   }
 
+
+
+
+
+  onCreatePost( ){
+
+    let arrStrings: string[] = [this.inflatableType, this.bounceHouseName, this.description, this.purchaseDate, this.vehicle, this.lastUsed];
+    let arrNumbers: number[] = [this.purchaseAmount, this.employees, this.stakes, this.blowers]
+
+
+
+    const rememberUser:JSON = <JSON><unknown>{
+      "inflatableType": this.inflatableType,
+      "inflatableName": this.bounceHouseName,
+      "description" : this.description,
+      "purchaseDate" : this.purchaseDate,
+      "purchaseAmount" : this.purchaseAmount,
+      "employeesNeeded" : this.employees,
+      "vehicleNeeded" : this.vehicle,
+      "stakesNeeded" : this.stakes,
+      "blowersNeeded" : this.blowers,
+      "lastDateUsed" : this.lastUsed
+
+    }
+
+    
+    console.log(this.postData)
+
+
+    this.http.post('https://vernal-design-313916-default-rtdb.firebaseio.com/inflatables/posts.json', rememberUser)
+    .subscribe(responseData => {
+      console.log(responseData)
+    });
+
+  }
 
 
 
