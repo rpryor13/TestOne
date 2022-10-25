@@ -1,6 +1,8 @@
 <html>
     <body style="background-color:#ced3d6; font-family: Arial, Helvetica, sans-serif;">
     <div>
+        <br>
+        <br>
         <h1 style="font-family: Arial, Helvetica, sans-serif;">
             Create Bounce House
         </h1>
@@ -10,46 +12,74 @@
         <table class="center">
             <tr>
                 <td width="33%">
-                    <label>Bounce House Name?</label>>
+                    <label>Bounce House Name:</label>
                 </td>
                 <td>
-                    <input type="text" id ="bounceHouseName" name = "bounceHouseName">
-                </td>
-                
-            </tr>
-            <tr>
-                <td>
-                    <button type="button" name="myButton">Giant Slides</button>
+                    <input style="width: 100%"type="text" id ="bounceHouseName" name = "bounceHouseName">
                 </td>
                 
             </tr>
             <tr>
                 <td>
-                    <button type="button" name="myButton">Combos</button>
+                    <label>Description:</label>
+                </td>
+                <td>
+                    <input style="width: 100%"type="text" id ="description" name = "description">
                 </td>
             </tr>
             <tr>
                 <td>
-                    <button type="button" name="myButton">Midway Rush Games</button>
+                    <label>Date of Purchase:</label>
+                </td>
+                <td>
+                    <input style="width: 100%"type="date" id ="purchaseDate" name = "purchaseDate">
                 </td>
             </tr>
             <tr>
                 <td>
-                    <button type="button" name="myButton">Fun & Games</button>
+                    <label>Purchase Amount:</label>
+                </td>
+                <td>
+
+                   <input style="width: 100%"type="number" id ="purchaseAmount" name = "purchaseAmount">
                 </td>
             </tr>
             <tr>
                 <td>
-                    <button type="button" name="myButton">Obstacles</button>
+                    <label>How many employees needed for setup?</label>
+                </td>
+                <td>
+                    <input style="width: 100%"type="number" id ="employeesNeeded" name = "employeesNeeded">
                 </td>
             </tr>
             <tr>
                 <td>
-                    <button type="button" name="myButton">Equipment</button>
+                    <label>How many times has this been used?</label>
+                </td>
+                <td>
+                    <input style="width: 100%"type="number" id ="numberUsed" name = "bnumberUsed">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Does this need a large vehicle or will it fit in a trailer?</label>
+                </td>
+                <td>
+                    <select style="width: 100%" id="vehicle" name="vehicle">
+                        <option value="any">Any Vehicle</option>
+                        <option value="truck">Large Truck Needed</option>
+                      </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <button type="submit" form="form1" value="Submit">Submit</button>
                 </td>
             </tr>
         </table>
     </form>
+
+    <!--- vehiclesused stakes required blowers reqd date of last use-->
     <br><br><br><br>
     </div>
     </body>
