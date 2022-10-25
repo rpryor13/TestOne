@@ -10,6 +10,7 @@ import { IgxNavbarModule, IgxButtonModule, IgxIconModule, IgxButtonGroupModule }
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InventoryComponent } from './inventory/inventory.component';
 import { BounceHouseComponent } from './bounce-house/bounce-house.component';
+import { BounceHouseCreateComponent } from './bounce-house-create/bounce-house-create.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { BounceHouseComponent } from './bounce-house/bounce-house.component';
     EventsComponent,
     SalesComponent,
     InventoryComponent,
-    BounceHouseComponent
+    BounceHouseComponent,
+    BounceHouseCreateComponent
   ],
   imports: [
     BrowserModule,
