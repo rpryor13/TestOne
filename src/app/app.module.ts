@@ -9,6 +9,7 @@ import { SalesComponent } from './sales/sales.component';
 import { IgxNavbarModule, IgxButtonModule, IgxIconModule, IgxButtonGroupModule } from 'igniteui-angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InventoryComponent } from './inventory/inventory.component';
+import { BounceHouseComponent } from './bounce-house/bounce-house.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { InventoryComponent } from './inventory/inventory.component';
     HomeComponent,
     EventsComponent,
     SalesComponent,
-    InventoryComponent
+    InventoryComponent,
+    BounceHouseComponent
   ],
   imports: [
     BrowserModule,

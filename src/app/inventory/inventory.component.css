@@ -12,7 +12,7 @@ h1{
 
 tr {
   height: 100px;
-  width: 800px;
+  width: 100%;
   text-align: center;
   vertical-align: middle;
   margin-left: auto;
@@ -21,8 +21,9 @@ tr {
 
 table {
 
-    width: 800px;
+    width: 100%;
     vertical-align: middle;
+    max-width: 800px;
 
 }
 .center {
@@ -40,7 +41,7 @@ button {
 }
 button:hover {
     color: #000000;
-    background-color: #ebebeb;
+    background-color: #fbf4b0;
 }
 
 .background {
