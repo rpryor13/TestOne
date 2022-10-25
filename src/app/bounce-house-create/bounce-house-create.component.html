@@ -4,7 +4,7 @@
         <br>
         <br>
         <h1 style="font-family: Arial, Helvetica, sans-serif;">
-            Create Bounce House
+            Create Inflatable
         </h1>
     </div>
     <div>
@@ -12,19 +12,33 @@
         <table class="center">
             <tr>
                 <td width="33%">
-                    <label>Bounce House Name:</label>
+                    <label>Type of Inflatable: </label>
                 </td>
                 <td>
-                    <input style="width: 100%"type="text" id ="bounceHouseName" name = "bounceHouseName">
+                    <select class="form-control" style="width: 100%" (input)="onUpdateVehicle($event)">
+                        <option value="bounce">Bounce House</option>
+                        <option value="slide">Giant Slide</option>
+                        <option value="combo">Combo</option>
+                        <option value="obstacle">Obstacle</option>
+                        <option value="midway">Midway Fun & Games</option>
+                        <option value="funGames">Other Fun & Games</option>
+                      </select>
                 </td>
-                
+            </tr>
+            <tr>
+                <td width="33%">
+                    <label>Inflatable Name:</label>
+                </td>
+                <td>
+                    <input class="form-control" style="width: 100%"type="text" (input)="onUpdateBounceHouse($event)">
+                </td>
             </tr>
             <tr>
                 <td>
                     <label>Description:</label>
                 </td>
                 <td>
-                    <input style="width: 100%"type="text" id ="description" name = "description">
+                    <input class="form-control" style="width: 100%"type="text" (input)="onUpdateDescription($event)">
                 </td>
             </tr>
             <tr>
@@ -32,7 +46,7 @@
                     <label>Date of Purchase:</label>
                 </td>
                 <td>
-                    <input style="width: 100%"type="date" id ="purchaseDate" name = "purchaseDate">
+                    <input class="form-control" style="width: 100%"type="date" (input)="onUpdateDate($event)">
                 </td>
             </tr>
             <tr>
@@ -41,7 +55,7 @@
                 </td>
                 <td>
 
-                   <input style="width: 100%"type="number" id ="purchaseAmount" name = "purchaseAmount">
+                   <input class="form-control" style="width: 100%"type="number" (input)="onUpdatePurchaseAmount($event)">
                 </td>
             </tr>
             <tr>
@@ -49,7 +63,7 @@
                     <label>How many employees needed for setup?</label>
                 </td>
                 <td>
-                    <input style="width: 100%"type="number" id ="employeesNeeded" name = "employeesNeeded">
+                    <input class="form-control" style="width: 100%"type="number" (input)="onUpdateEmployees($event)">
                 </td>
             </tr>
             <tr>
@@ -57,23 +71,52 @@
                     <label>How many times has this been used?</label>
                 </td>
                 <td>
-                    <input style="width: 100%"type="number" id ="numberUsed" name = "bnumberUsed">
+                    <input class="form-control" style="width: 100%"type="number" (input)="onUpdateUses($event)">
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label>Does this need a large vehicle or will it fit in a trailer?</label>
+                    <label>What type of vehicle is needed?</label>
                 </td>
                 <td>
-                    <select style="width: 100%" id="vehicle" name="vehicle">
-                        <option value="any">Any Vehicle</option>
-                        <option value="truck">Large Truck Needed</option>
+                    <select class="form-control" style="width: 100%" (input)="onUpdateVehicle($event)">
+                        <option value="Any">Any Vehicle</option>
+                        <option value="Truck">Large Truck Needed</option>
                       </select>
                 </td>
             </tr>
             <tr>
+                <td>
+                    <label>How many stakes/sandbags are needed?</label>
+                </td>
+                <td>
+                    <input class="form-control" style="width: 100%"type="number" (input)="onUpdateStakes($event)">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>How many blowers are needed?</label>
+                </td>
+                <td>
+                    <select class="form-control" style="width: 100%" (input)="onUpdateBlowers($event)">
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                        <option value="4">Four</option>
+                      </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Date of last use: </label>
+                </td>
+                <td>
+                    <input class="form-control" style="width: 100%"type="date" (input)="onUpdateDateUsed($event)">
+                </td>
+            </tr> 
+            <tr>
                 <td colspan="2" style="text-align: center;">
-                    <button type="submit" form="form1" value="Submit">Submit</button>
+                    <button style="font-family: Arial, Helvetica, sans-serif;" (click)="alert()">Submit</button>
                 </td>
             </tr>
         </table>
