@@ -92,7 +92,7 @@ export class BounceHouseCreateComponent implements OnInit {
 
 
 
-    const rememberUser:JSON = <JSON><unknown>{
+    const inflatableData:JSON = <JSON><unknown>{
       "inflatableType": this.inflatableType,
       "inflatableName": this.bounceHouseName,
       "description" : this.description,
@@ -103,14 +103,13 @@ export class BounceHouseCreateComponent implements OnInit {
       "stakesNeeded" : this.stakes,
       "blowersNeeded" : this.blowers,
       "lastDateUsed" : this.lastUsed
-
     }
 
     
     console.log(this.postData)
 
 
-    this.http.post('https://vernal-design-313916-default-rtdb.firebaseio.com/inflatables/posts.json', rememberUser)
+    this.http.post('https://vernal-design-313916-default-rtdb.firebaseio.com/inflatables/posts.json', inflatableData)
     .subscribe(responseData => {
       console.log(responseData)
     });
