@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
 
 import { AppComponent } from './app.component';
 import { HeaderBarComponent } from './header-bar/header-bar.component';
@@ -25,7 +26,7 @@ import { AngularFireModule } from "@angular/fire/compat";
     SalesComponent,
     InventoryComponent,
     BounceHouseComponent,
-    BounceHouseCreateComponent
+    BounceHouseCreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +38,7 @@ import { AngularFireModule } from "@angular/fire/compat";
     IgxButtonGroupModule,
     HttpClientModule,
     AppRoutingModule,
+    MaterialModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyCZ30nJV86YNwb4tJugNk110dZenMffLBU",
       authDomain: "vernal-design-313916.firebaseapp.com",
