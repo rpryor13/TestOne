@@ -1,4 +1,25 @@
-<div class="container" >
-    <h1> This is the home page </h1>
-    <h3> This is the content for the home page </h3>
+
+  <button mat-raised-buyyon color="primary" routerLink="/signup">
+    SignUp
+  </button>
+
+  <button mat-raised-buyyon color="primary" routerLink="/signin">
+    SignIn
+  </button>
+
+  <button mat-raised-buyyon color="primary" routerLink="/bounce-house">
+    Bouce House
+  </button>
+
+
+  <div *ngIf="(afAuth.user | async)">
+    User is Signed In
+    <br>
+    <button mat-raised-buyyon color="primary" (click)="logout()">
+      Log Out
+    </button>
+  </div>
+
+  <div> *ngIf="!(afAuth.user | async)">
+    User is not Signed In
   </div>

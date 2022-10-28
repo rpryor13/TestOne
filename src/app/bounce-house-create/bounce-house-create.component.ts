@@ -104,10 +104,8 @@ export class BounceHouseCreateComponent implements OnInit {
       "blowersNeeded" : this.blowers,
       "lastDateUsed" : this.lastUsed
     }
-
-    
+   
     console.log(this.postData)
-
 
     this.http.post('https://vernal-design-313916-default-rtdb.firebaseio.com/inflatables/posts.json', inflatableData)
     .subscribe(responseData => {
@@ -116,9 +114,6 @@ export class BounceHouseCreateComponent implements OnInit {
 
   }
 
-
-
-  
   alert() {
     window.alert('The inflatable type is: ' + this.inflatableType + 'The name is: ' + this.bounceHouseName + "\n" + 'The description is: ' + this.description + "\n" + 'The purchase date was: ' + this.purchaseDate
     + "\nThe bounce house was purchased for : " + this.formatter.format(this.purchaseAmount) + "\nYou need " + this.employees + " employees to set up this inflatable"
@@ -126,7 +121,6 @@ export class BounceHouseCreateComponent implements OnInit {
     + "\nYou need to bring " + this.blowers + " blowers with this inflatable" + "\nThis inflatable was last used on: " + this.lastUsed
     );
   }
-
 }
 
 

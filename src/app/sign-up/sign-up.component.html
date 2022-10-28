@@ -1,0 +1,28 @@
+<div fxLayoutAlign="center center" fxFlexFill class="main-div">
+
+    <mat-card fxFlex="35">
+      <mat-toolbar>Sign Up</mat-toolbar>
+        <form [formGroup]="signupForm" (ngSubmit)="signup()" fxLayoutAlign="stretch" fxLayout="column" class="signin-form">
+            <mat-form-field appearance="outline">
+                <mat-label>Full Name</mat-label> 
+                <input autocomplete="off" forControlName="displayName" type="text" matInput placeholder="Username">
+            </mat-form-field>  
+
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label> 
+                <input autocomplete="off" forControlName="email" type="email" matInput placeholder="Email">
+            </mat-form-field>  
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label> 
+                    <input autocomplete="off" forControlName="password" type="password" matInput placeholder="password">
+                </mat-form-field>  
+
+                <div *ngIf="firebaseErrorMessage != ''" class="error-style">
+                    <span>{{ firebaseErrorMessage}}</span>
+                </div>
+                <button class="btton" mat-raised-button type="submit">Sign Up</button>
+        </form>
+    </mat-card>  
+</div>
+

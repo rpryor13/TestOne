@@ -1,20 +1,24 @@
-import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from '@angular/router';
-import { BounceHouseCreateComponent } from "./bounce-house-create/bounce-house-create.component";
-import { HomeComponent } from "./home/home.component";
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { InventoryComponent } from './inventory/inventory.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { HomeComponent } from './home/home.component';
+import { AuthGuard } from './services/auth.guard';
 
-//Components
-import { InventoryComponent } from "./inventory/inventory.component";
 
 const routes: Routes = [
-  { path: '', component: HomeComponent }, //Root path
-  { path: 'Inventory', component: InventoryComponent },
-  { path: 'Bounce_Houses', component: BounceHouseCreateComponent },
-
+  {path:'', redirectTo:'home', pathMatch:'full'},
+  {path:'home', component:HomeComponent},
+  {path:'signin', component:SignInComponent},
+  {path:'signup', component:SignUpComponent},
+  {path:'inventory', component:InventoryComponent, canActivate:[AuthGuard]},
+  {path:'##', component:HomeComponent},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)], //set these up as the root routes for the app
-  exports: [RouterModule] //allow import into the app module
+imports: [RouterModule.forRoot(routes)],
+exports: [RouterModule]
 })
-export class AppRoutingModule{}
+export class AppRoutingModule { }
