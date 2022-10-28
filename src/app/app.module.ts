@@ -2,7 +2,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IgxNavbarModule, IgxButtonModule, IgxIconModule, IgxButtonGroupModule } from 'igniteui-angular';
@@ -16,6 +15,7 @@ import { SalesComponent } from './sales/sales.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { BounceHouseComponent } from './bounce-house/bounce-house.component';
 import { BounceHouseCreateComponent } from './bounce-house-create/bounce-house-create.component';
+import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from "@angular/fire/compat";
 
 @NgModule({
@@ -40,6 +40,7 @@ import { AngularFireModule } from "@angular/fire/compat";
     HttpClientModule,
     AppRoutingModule,
     AngularFireModule,
+    HttpClientModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyCZ30nJV86YNwb4tJugNk110dZenMffLBU",
       authDomain: "vernal-design-313916.firebaseapp.com",
