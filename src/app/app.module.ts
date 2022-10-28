@@ -13,23 +13,23 @@ import { BounceHouseComponent } from './bounce-house/bounce-house.component';
 import { BounceHouseCreateComponent } from './bounce-house-create/bounce-house-create.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SignInComponent } from './sign-in/sign-in.component';
-import {AppRoutingModule } from './app-routing.module';
-import {MatCardModule} from '@angular/material/card';
-import {MatButtonModule} from '@angular/material/button';
-import {FlexLayoutModule} from '@angular/flex-layout';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {RouterModule} from '@angular/router';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { AppRoutingModule } from './app-routing.module';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { RouterModule } from '@angular/router';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
-import {environment} from '../environments/environment';
-import { AngularFireModule} from '@angular/fire/compat';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
 import { SignUpComponent } from './sign-up/sign-up.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent, 
+    AppComponent,
     HeaderBarComponent,
     HomeComponent,
     EventsComponent,
@@ -64,10 +64,13 @@ import { SignUpComponent } from './sign-up/sign-up.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule{}
+export class AppModule { }
 
 
-function initializeApp(environment: { production: boolean; }, firebase: unknown): any[] | import("@angular/core").Type<any> | import("@angular/core").ModuleWithProviders<{}> {
+function initializeApp(
+  environment: { production: boolean; }, 
+  firebase: unknown
+): any[] | import("@angular/core").Type<any> | import("@angular/core").ModuleWithProviders<{}> {
   throw new Error('Function not implemented.');
 }
 
