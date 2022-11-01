@@ -5,11 +5,15 @@ import { ReturnStatement } from '@angular/compiler';
 import { ServerDataSource } from 'ng2-smart-table';
 import { Post } from './post.model';
 import { InflatablesService } from './inflatables.service';
+import { Ng2SmartTableModule, LocalDataSource } from 'ng2-smart-table';
 
 @Component({
   selector: 'app-view-inflatables',
   styleUrls: ['./view-inflatables.component.css'],
-  templateUrl: './view-inflatables.component.html',
+  //templateUrl: './view-inflatables.component.html',
+  template: `
+  <ng2-smart-table [settings]="settings" [source]="arrInflatables"></ng2-smart-table>
+`
 })
 export class ViewInflatablesComponent implements OnInit {
 
@@ -17,10 +21,62 @@ export class ViewInflatablesComponent implements OnInit {
 
   arrInflatables2: Post[] = [];
 
+  settings = {
+    columns: {
+      blowersNeeded: {
+        title: 'Blowers Needed',
+        filter: false
+      },
+      description: {
+        title: 'Description',
+        filter: false
+      },
+      employeesNeeded: {
+        title: 'Employees Needed',
+        filter: false
+      },
+      id: {
+        title: 'ID',
+        filter: false
+      },
+      inflatableName: {
+        title: 'Name',
+        filter: false
+      },
+      inflatableType: {
+        title: 'Type',
+        filter: false
+      },
+      lastDateUsed: {
+        title: 'Last Date of Use',
+        filter: false
+      },
+      purchaseAmount: {
+        title: 'Purchase Amount',
+        filter: false
+      },
+      purchaseDate: {
+        title: 'Purchase Date',
+        filter: false
+      },
+      stakesNeeded: {
+        title: 'Stakes Needed',
+        filter: false
+      },
+      uniqueID: {
+        title: 'ID2',
+        filter: false
+      },
+      vehicleNeeded: {
+        title: 'Vehicle Needed',
+        filter: false
+      }
+    }
+  };
 
   constructor(private http: HttpClient, private srvcInflatable: InflatablesService) {
 
-
+    
 
 
 
@@ -44,7 +100,7 @@ export class ViewInflatablesComponent implements OnInit {
 
 
 
-    //arrInflatables = this.fetchPosts(this.arrInflatables);
+    this.fetchPosts(this.arrInflatables);
     console.log(this.arrInflatables);
 
 
