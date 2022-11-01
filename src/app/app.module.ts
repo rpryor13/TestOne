@@ -16,6 +16,10 @@ import { BounceHouseComponent } from './bounce-house/bounce-house.component';
 import { BounceHouseCreateComponent } from './bounce-house-create/bounce-house-create.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from "@angular/fire/compat";
+import { ViewInflatablesComponent } from './view-inflatables/view-inflatables.component';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { InflatablesService } from './view-inflatables/inflatables.service';
+
 
 @NgModule({
   declarations: [
@@ -27,6 +31,7 @@ import { AngularFireModule } from "@angular/fire/compat";
     InventoryComponent,
     BounceHouseComponent,
     BounceHouseCreateComponent,
+    ViewInflatablesComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +44,7 @@ import { AngularFireModule } from "@angular/fire/compat";
     HttpClientModule,
     AppRoutingModule,
     MaterialModule,
+    Ng2SmartTableModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyCZ30nJV86YNwb4tJugNk110dZenMffLBU",
       authDomain: "vernal-design-313916.firebaseapp.com",
@@ -50,7 +56,7 @@ import { AngularFireModule } from "@angular/fire/compat";
       measurementId: "G-81XNEJE3PG"
     })
   ],
-  providers: [],
+  providers: [InflatablesService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

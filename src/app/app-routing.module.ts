@@ -7,6 +7,7 @@ import { SalesComponent } from "./sales/sales.component";
 
 //Components
 import { InventoryComponent } from "./inventory/inventory.component";
+import { ViewInflatablesComponent } from "./view-inflatables/view-inflatables.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent }, //Root path
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'Event', component: EventsComponent },
   { path: 'Sales', component: SalesComponent },
   { path: 'Home', component: HomeComponent },
+  { path: 'ViewInflatables', component: ViewInflatablesComponent}
   
 
 ];
