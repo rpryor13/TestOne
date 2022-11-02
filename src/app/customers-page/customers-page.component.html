@@ -1,0 +1,24 @@
+<section class="new-customer" fxLayout fxLayoutAlign="center">
+  <form (ngSubmit)="onCreateCustomer(f)" #f="ngForm">
+    <mat-card fxFlex.xs="100%" fxFlex="400px">
+      <mat-card-title fxLayoutAlign="center center">Add new customer</mat-card-title>
+        <mat-card-content fxLayoutAlign="center">
+          <mat-form-field>
+            <input
+            type="text"
+            placeholder="Customer First Name"
+            formControlName="First Name"
+            required>
+            <mat-error>Invalid or missing First Name</mat-error>
+          </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions fxLayoutAlign="center">
+          <button type="submit" mat-button [disabled]="f.invalid">Submit</button>
+        </mat-card-actions>
+
+
+    </mat-card>
+  </form>
+</section>
+
+
