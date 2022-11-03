@@ -25,7 +25,6 @@ import { CustomerService } from './customers-page/customer.service';
 import { Customer } from './customers-page/customer.model';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-
 @NgModule({
   declarations: [
     AppComponent,

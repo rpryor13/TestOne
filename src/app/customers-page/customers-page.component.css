@@ -1,3 +1,21 @@
 .new-customer {
   padding: 30px;
 }
+
+mat-form-field {
+  width: 300px;
+}
+
+.gap {
+  margin: 10px;
+}
+
+td, th {
+  padding: 5px;
+  text-align: center;
+}
+
+.info-text {
+  text-align: center;
+}
+
