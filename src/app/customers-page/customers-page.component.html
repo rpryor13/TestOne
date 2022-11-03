@@ -1,24 +1,100 @@
+<!-- Add New Customer Form -->
 <section class="new-customer" fxLayout fxLayoutAlign="center">
-  <form (ngSubmit)="onCreateCustomer(f)" #f="ngForm">
+  <form (submit)="onCreateCustomer(postForm)" #postForm="ngForm">
     <mat-card fxFlex.xs="100%" fxFlex="400px">
-      <mat-card-title fxLayoutAlign="center center">Add new customer</mat-card-title>
-        <mat-card-content fxLayoutAlign="center">
+      <mat-card-title fxLayoutAlign="center center">New Customer</mat-card-title>
+        <mat-card-content fxLayout="column" fxLayoutAlign="center center">
+
           <mat-form-field>
             <input
+            matInput
             type="text"
+            name="firstName"
             placeholder="Customer First Name"
-            formControlName="First Name"
-            required>
-            <mat-error>Invalid or missing First Name</mat-error>
+            ngModel
+            required
+            #firstName="ngModel">
+            <mat-error *ngIf="firstName.invalid">Invalid or missing first name</mat-error>
           </mat-form-field>
+
+          <mat-form-field>
+            <input
+            matInput
+            type="text"
+            name="lastName"
+            placeholder="Customer Last Name"
+            ngModel
+            required
+            #lastName="ngModel">
+            <mat-error *ngIf="lastName.invalid">Invalid or missing last name</mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input
+            matInput
+            type="email"
+            name="email"
+            placeholder="Customer Email"
+            ngModel
+            required
+            #email="ngModel">
+            <mat-error *ngIf="email.invalid">Invalid or missing email</mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+          <mat-icon matSuffix>phone</mat-icon>
+            <input
+            matInput
+            type="tel"
+            name="phoneNumber"
+            placeholder="Customer Phone Number"
+            ngModel
+            required
+            #phone="ngModel">
+            <mat-error *ngIf="phone.invalid">Invalid or missing phone number</mat-error>
+          </mat-form-field>
+
         </mat-card-content>
         <mat-card-actions fxLayoutAlign="center">
-          <button type="submit" mat-button [disabled]="f.invalid">Submit</button>
+          <button type="submit" mat-raised-button [disabled]="postForm.invalid" color="primary">Submit</button>
         </mat-card-actions>
-
-
     </mat-card>
   </form>
 </section>
+<p class="info-text" *ngIf="customers.length < 1">No customers added yet!</p>
+
+<!-- Customers Table -->
+<section class="customer-table" fxLayout fxLayoutAlign="center">
+  <mat-card fxFlex.xs="100%" fxFlex="850px" *ngIf="customers.length > 0">
+    <mat-card-title fxLayoutAlign="center center">All Customers</mat-card-title>
+    <mat-card-content fxLayout="column" fxLayoutAlign="center center">
+      <table>
+        <thead>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let customer of customers">
+            <td>{{customer.strFirstName}}</td>
+            <td>{{customer.strLastName}}</td>
+            <td>{{customer.strEmail}}</td>
+            <td>{{customer.strPhoneNumber}}</td>
+            <td>
+              <button class="gap" mat-raised-button color="primary" (click)="deleteCustomer(customer.id)">Delete</button>
+            </td>
+            <td>
+              <button class="gap" mat-raised-button color="primary" (click)="updateCustomer(customer)">Update</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </mat-card-content>
+  </mat-card>
+</section>
+
+<!-- Modally Displayed Edit Customer Form -->
+
 
 

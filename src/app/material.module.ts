@@ -10,6 +10,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   imports: [
@@ -21,7 +23,9 @@ import { MatCardModule } from '@angular/material/card';
     MatNativeDateModule,
     MatCheckboxModule,
     MatSidenavModule,
-    MatCardModule
+    MatCardModule,
+    MatExpansionModule,
+    MatTableModule
   ],
   exports: [
     MatButtonModule,
@@ -32,7 +36,9 @@ import { MatCardModule } from '@angular/material/card';
     MatNativeDateModule,
     MatCheckboxModule,
     MatSidenavModule,
-    MatCardModule
+    MatCardModule,
+    MatExpansionModule,
+    MatTableModule
   ]
 })
 export class MaterialModule {}
