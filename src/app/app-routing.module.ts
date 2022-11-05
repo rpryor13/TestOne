@@ -4,6 +4,7 @@ import { BounceHouseCreateComponent } from "./bounce-house-create/bounce-house-c
 import { HomeComponent } from "./home/home.component";
 import { EventsComponent } from "./events/events.component";
 import { SalesComponent } from "./sales/sales.component";
+import { EquipmentComponent } from "./equipment/equipment.component";
 
 //Components
 import { InventoryComponent } from "./inventory/inventory.component";
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'Home', component: HomeComponent },
   { path: 'ViewInflatables', component: ViewInflatablesComponent},
   { path: 'Customers', component: CustomersPageComponent },
+  { path: 'Equipment', component: EquipmentComponent },
 
 
 ];

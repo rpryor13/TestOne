@@ -24,6 +24,8 @@ import { CustomersPageComponent } from './customers-page/customers-page.componen
 import { CustomerService } from './customers-page/customer.service';
 import { Customer } from './customers-page/customer.model';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { EquipmentComponent } from './equipment/equipment.component';
+import { EquipmentService } from './equipment/equipment.service';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     BounceHouseCreateComponent,
     ViewInflatablesComponent,
     CustomersPageComponent,
+    EquipmentComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,7 +67,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AngularFirestoreModule,
     FlexLayoutModule,
   ],
-  providers: [InflatablesService, CustomerService],
+  providers: [InflatablesService, CustomerService, EquipmentService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
