@@ -1,0 +1,41 @@
+h1{
+    text-align: center;
+    margin-top: 0%;
+    font-family: "Arial";
+
+}
+
+h3{
+    text-align: center;
+}
+
+body{
+    background-color:#ced3d6
+}
+
+.container {
+    padding-top: 5px;
+
+}
+
+.new-equipment {
+    padding: 30px;
+    padding-top: 10px;
+  }
+  
+  mat-form-field {
+    width: 300px;
+  }
+  
+  .gap {
+    margin: 10px;
+  }
+  
+  td, th {
+    padding: 5px;
+    text-align: center;
+  }
+  
+  .info-text {
+    text-align: center;
+  }

@@ -1,0 +1,99 @@
+<body>
+    <div class="container" >
+        <h1>Invetory: Equipment</h1>
+      </div>
+
+      <section class="new-equipment" fxLayout fxLayoutAlign="center">
+        <form (submit)="onCreateEquipment(postForm)" #postForm="ngForm">
+          <mat-card fxFlex.xs="100%" fxFlex="400px">
+            <mat-card-title fxLayoutAlign="center center">New Equipment</mat-card-title>
+              <mat-card-content fxLayout="column" fxLayoutAlign="center center">
+      
+                <mat-form-field>
+                  <input
+                  matInput
+                  type="text"
+                  name="equipmentName"
+                  placeholder="Equipment Name"
+                  ngModel
+                  required
+                  #equipmentName="ngModel">
+                  <mat-error *ngIf="equipmentName.invalid">Invalid or missing equipment name</mat-error>
+                </mat-form-field>
+      
+                <mat-form-field>
+                  <input
+                  matInput
+                  type="text"
+                  name="description"
+                  placeholder="Description of Equipment"
+                  ngModel
+                  required
+                  #description="ngModel">
+                  <mat-error *ngIf="description.invalid">Invalid or missing description</mat-error>
+                </mat-form-field>
+      
+                <mat-form-field>
+                  <input
+                  matInput
+                  type="number"
+                  name="expectedQuantity"
+                  placeholder="Expected Quantity"
+                  ngModel
+                  required
+                  #expectedQuantity="ngModel">
+                  <mat-error *ngIf="expectedQuantity.invalid">Invalid or missing expected quantity</mat-error>
+                </mat-form-field>
+      
+                <mat-form-field>
+                  <input
+                  matInput
+                  type="number"
+                  name="quantityonHand"
+                  placeholder="Quantity on Hand"
+                  ngModel
+                  required
+                  #quantityonHand="ngModel">
+                  <mat-error *ngIf="quantityonHand.invalid">Invalid or missing quantity on hand</mat-error>
+                </mat-form-field>
+      
+              </mat-card-content>
+              <mat-card-actions fxLayoutAlign="center">
+                <button type="submit" mat-raised-button [disabled]="postForm.invalid" color="primary">Submit</button>
+              </mat-card-actions>
+          </mat-card>
+        </form>
+      </section>
+      <p class="info-text" *ngIf="equipments.length < 1">No equipments added yet!</p>
+      
+      <!-- Equipments Table -->
+      <section class="equipment-table" fxLayout fxLayoutAlign="center">
+        <mat-card fxFlex.xs="100%" fxFlex="850px" *ngIf="equipments.length > 0">
+          <mat-card-title fxLayoutAlign="center center">All Equipments</mat-card-title>
+          <mat-card-content fxLayout="column" fxLayoutAlign="center center">
+            <table>
+              <thead>
+                <th>Equipment Name</th>
+                <th>Description</th>
+                <th>Expected Quantiy</th>
+                <th>Quantity on Hand</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let equipment of equipments">
+                  <td>{{equipment.strEquipmentName}}</td>
+                  <td>{{equipment.strDescription}}</td>
+                  <td>{{equipment.intExpectedQuantity}}</td>
+                  <td>{{equipment.intQuantityOnHand}}</td>
+                  <td>
+                    <button class="gap" mat-raised-button color="primary" (click)="deleteEquipment(equipment.id)">Delete</button>
+                  </td>
+                  <td>
+                    <button class="gap" mat-raised-button color="primary" (click)="updateEquipment(equipment)">Update</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </mat-card-content>
+        </mat-card>
+      </section>
+</body>

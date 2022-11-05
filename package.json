@@ -24,6 +24,7 @@
     "@angular/router": "^14.2.0",
     "@coreui/coreui": "^4.2.2",
     "@igniteui/material-icons-extended": "^2.10.0",
+    "angular-material": "^1.2.5",
     "angular-smart-table": "^2.1.11",
     "bootstrap": "^5.2.2",
     "fflate": "^0.7.3",
