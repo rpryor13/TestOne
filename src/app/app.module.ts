@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { HeaderBarComponent } from './header-bar/header-bar.component';
 import { HomeComponent } from './home/home.component';
 import { EventsComponent } from './events/events.component';
+import { EventService } from './events/event.service';
 import { SalesComponent } from './sales/sales.component';
 import { IgxNavbarModule, IgxButtonModule, IgxIconModule, IgxButtonGroupModule } from 'igniteui-angular';
 import { InventoryComponent } from './inventory/inventory.component';
@@ -67,7 +68,7 @@ import { EquipmentService } from './equipment/equipment.service';
     AngularFirestoreModule,
     FlexLayoutModule,
   ],
-  providers: [InflatablesService, CustomerService, EquipmentService],
+  providers: [InflatablesService, CustomerService, EquipmentService, EventService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Customer } from './customer.model';
 import { CustomerService } from './customer.service';
 
+
 @Component({
   selector: 'app-customers-page',
   templateUrl: './customers-page.component.html',
@@ -27,7 +28,7 @@ export class CustomersPageComponent implements OnInit {
 
   //Local getCustomers method ***DIFFERENT FROM ONE IN THE SERVICE.TS***
   getCustomers() {
-    
+
     //get list from CustomerService
     this.customerService.getCustomers().subscribe(data => {
 
@@ -43,6 +44,11 @@ export class CustomersPageComponent implements OnInit {
         };
       });
     });
+  }
+
+  //This method takes the update click and passes the customer object
+  onUpdateClick(customer: Customer) {
+
   }
 
   //This method takes a customer object and calls
