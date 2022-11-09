@@ -17,13 +17,19 @@ import { BounceHouseCreateComponent } from './bounce-house-create/bounce-house-c
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { ViewInflatablesComponent } from './view-inflatables/view-inflatables.component';
-import { Ng2SmartTableModule } from 'ng2-smart-table';
-import { InflatablesService } from './view-inflatables/inflatables.service';
+
+
 import { CustomersPageComponent } from './customers-page/customers-page.component';
 import { CustomerService } from './customers-page/customer.service';
 import { Customer } from './customers-page/customer.model';
 import { FlexLayoutModule } from '@angular/flex-layout';
+
+import { FirebaseService } from './services/firebase.service';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+
+
 
 @NgModule({
   declarations: [
@@ -35,7 +41,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     InventoryComponent,
     BounceHouseComponent,
     BounceHouseCreateComponent,
-    ViewInflatablesComponent,
+
     CustomersPageComponent,
   ],
   imports: [
@@ -50,7 +56,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HttpClientModule,
     AppRoutingModule,
     MaterialModule,
-    Ng2SmartTableModule,
+
+    MatToolbarModule,
+    MatInputModule,
+    MatIconModule,
+    
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyCZ30nJV86YNwb4tJugNk110dZenMffLBU",
       authDomain: "vernal-design-313916.firebaseapp.com",
@@ -64,7 +74,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AngularFirestoreModule,
     FlexLayoutModule,
   ],
-  providers: [InflatablesService, CustomerService],
+  providers: [FirebaseService, CustomerService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

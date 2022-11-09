@@ -7,17 +7,17 @@ import { SalesComponent } from "./sales/sales.component";
 
 //Components
 import { InventoryComponent } from "./inventory/inventory.component";
-import { ViewInflatablesComponent } from "./view-inflatables/view-inflatables.component";
+
 import { CustomersPageComponent } from "./customers-page/customers-page.component";
 
 const routes: Routes = [
-  { path: '', component: HomeComponent }, //Root path
+  { path: '', redirectTo: 'Home', pathMatch: 'full' },
+  { path: 'Home', component: HomeComponent },
   { path: 'Inventory', component: InventoryComponent },
   { path: 'Bounce_Houses', component: BounceHouseCreateComponent },
   { path: 'Event', component: EventsComponent },
   { path: 'Sales', component: SalesComponent },
-  { path: 'Home', component: HomeComponent },
-  { path: 'ViewInflatables', component: ViewInflatablesComponent},
+
   { path: 'Customers', component: CustomersPageComponent },
 
 
