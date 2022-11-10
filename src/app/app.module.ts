@@ -18,15 +18,21 @@ import { BounceHouseCreateComponent } from './bounce-house-create/bounce-house-c
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { ViewInflatablesComponent } from './view-inflatables/view-inflatables.component';
-import { Ng2SmartTableModule } from 'ng2-smart-table';
-import { InflatablesService } from './view-inflatables/inflatables.service';
+
+
 import { CustomersPageComponent } from './customers-page/customers-page.component';
 import { CustomerService } from './customers-page/customer.service';
 import { Customer } from './customers-page/customer.model';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { EquipmentComponent } from './equipment/equipment.component';
 import { EquipmentService } from './equipment/equipment.service';
+
+import { FirebaseService } from './services/firebase.service';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+
+
 
 @NgModule({
   declarations: [
@@ -38,7 +44,7 @@ import { EquipmentService } from './equipment/equipment.service';
     InventoryComponent,
     BounceHouseComponent,
     BounceHouseCreateComponent,
-    ViewInflatablesComponent,
+
     CustomersPageComponent,
     EquipmentComponent,
   ],
@@ -54,7 +60,11 @@ import { EquipmentService } from './equipment/equipment.service';
     HttpClientModule,
     AppRoutingModule,
     MaterialModule,
-    Ng2SmartTableModule,
+
+    MatToolbarModule,
+    MatInputModule,
+    MatIconModule,
+    
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyCZ30nJV86YNwb4tJugNk110dZenMffLBU",
       authDomain: "vernal-design-313916.firebaseapp.com",
@@ -68,7 +78,9 @@ import { EquipmentService } from './equipment/equipment.service';
     AngularFirestoreModule,
     FlexLayoutModule,
   ],
-  providers: [InflatablesService, CustomerService, EquipmentService, EventService],
+
+  providers: [FirebaseService, InflatablesService, CustomerService, EquipmentService, EventService],
+
   bootstrap: [AppComponent]
 })
 export class AppModule {
