@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { HeaderBarComponent } from './header-bar/header-bar.component';
 import { HomeComponent } from './home/home.component';
 import { EventsComponent } from './events/events.component';
+import { EventService } from './events/event.service';
 import { SalesComponent } from './sales/sales.component';
 import { IgxNavbarModule, IgxButtonModule, IgxIconModule, IgxButtonGroupModule } from 'igniteui-angular';
 import { InventoryComponent } from './inventory/inventory.component';
@@ -23,6 +24,8 @@ import { CustomersPageComponent } from './customers-page/customers-page.componen
 import { CustomerService } from './customers-page/customer.service';
 import { Customer } from './customers-page/customer.model';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { EquipmentComponent } from './equipment/equipment.component';
+import { EquipmentService } from './equipment/equipment.service';
 
 import { FirebaseService } from './services/firebase.service';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -43,6 +46,7 @@ import {MatIconModule} from '@angular/material/icon';
     BounceHouseCreateComponent,
 
     CustomersPageComponent,
+    EquipmentComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,7 +78,9 @@ import {MatIconModule} from '@angular/material/icon';
     AngularFirestoreModule,
     FlexLayoutModule,
   ],
-  providers: [FirebaseService, CustomerService],
+
+  providers: [FirebaseService, InflatablesService, CustomerService, EquipmentService, EventService],
+
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,38 +1,38 @@
 import { Injectable } from "@angular/core";
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { Customer } from "./customer.model";
 import { map } from 'rxjs/operators';
 import { Subject, Subscription } from 'rxjs';
+import { Equipment } from "./equipment.model";
 
 @Injectable()
-export class CustomerService {
+export class EquipmentService {
 
   constructor(private db: AngularFirestore) {}
 
   //Add a new customer to the database
   //passing in a customer object from the form
-  addCustomer(customer: Customer) {
+  addEquipment(equipment: Equipment) {
     //Convert Customer model to JSON object
-    const customerObject = {...customer};
-    return this.db.collection('Customers').add(customerObject);
+    const equipmentObject = {...equipment};
+    return this.db.collection('Equipments').add(equipmentObject);
   }
 
   //Get Customers (retrieve from db) WITH ID
   //returns an observable object with a list of customers from the db
-  getCustomers() {
-    return this.db.collection('Customers').snapshotChanges();
+  getEquipments() {
+    return this.db.collection('Equipments').snapshotChanges();
   }
 
   //take customer object and update the firestore document
-  updateCustomer(customer: Customer) {
+  updateEquipment(equipment: Equipment) {
     //convert to JSON
-    const customerObject = {...customer};
-    this.db.doc('Customers/' + customer.id).update(customerObject);
+    const equipmentObject = {...equipment};
+    this.db.doc('Equipments/' + equipment.id).update(equipmentObject);
   }
 
   //delete customer from db (takes an id)
-  deleteCustomer(customerId: string) {
-    this.db.doc('Customers/' + customerId).delete();
+  deleteEquipment(equipmentId: string) {
+    this.db.doc('Equipments/' + equipmentId).delete();
   }
 
 }
